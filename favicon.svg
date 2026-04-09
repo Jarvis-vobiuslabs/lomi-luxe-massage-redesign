@@ -1,11 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f97316"/>
-      <stop offset="1" stop-color="#f59e0b"/>
+      <stop offset="0" stop-color="#c49a6c"/>
+      <stop offset="1" stop-color="#8c6a48"/>
     </linearGradient>
   </defs>
-  <rect x="4" y="4" width="56" height="56" rx="16" fill="#0b0b10"/>
-  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#g)" opacity="0.14"/>
-  <path d="M18 46V18h11.2c10 0 16.8 5.2 16.8 14s-6.8 14-16.8 14H18Zm10-22v16h1.2c6 0 9.6-3.1 9.6-8s-3.6-8-9.6-8H28Z" fill="#fff" opacity="0.92"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0c0b09"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g)" opacity="0.20"/>
+  <!-- Stylised L letterform -->
+  <path d="M18 46V18h7v22h13v6H18Z" fill="url(#g)" opacity="0.96"/>
+  <!-- Wave accent (Lomi) -->
+  <path d="M34 26 Q38 21 42 26 Q46 31 42 36" fill="none" stroke="#c49a6c" stroke-width="2.4" stroke-linecap="round" opacity="0.80"/>
 </svg>

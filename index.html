@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lomi Luxe Massage — Lomi Lomi Massage</title>
-  <meta name="description" content="Lomi Lomi massage (Loving Hands) by Leta, a certified holistic practitioner. Treatment packages: 60, 75, 90 minutes. Hot stones +$20. Gift cards available." />
+  <title>Lomi Luxe Massage — Hawaiian Lomi Lomi by Leta</title>
+  <meta name="description" content="Lomi Lomi (Loving Hands) massage by Leta, a certified holistic practitioner. 60, 75 & 90-minute sessions. Hot stones +$20. Gift cards available. Serene, restorative, deeply relaxing." />
 
-  <meta property="og:title" content="Lomi Luxe Massage" />
-  <meta property="og:description" content="The self-care you deserve. Lomi Lomi massage by Leta. Gift cards available." />
+  <meta property="og:title" content="Lomi Luxe Massage — Hawaiian Lomi Lomi by Leta" />
+  <meta property="og:description" content="Rhythmic, flowing Lomi Lomi massage rooted in Hawaiian healing traditions. Custom pressure. Calming ambiance. Real relief." />
   <meta property="og:image" content="og-image.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -16,234 +16,1252 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    :root{
-      --bg:#0b0b10;
-      --card:rgba(255,255,255,.06);
-      --stroke:rgba(255,255,255,.12);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.68);
-      --muted2:rgba(255,255,255,.45);
-      --accent:#f97316;
-      --accent2:#f59e0b;
+    /* ── Tokens ──────────────────────────────────────────────── */
+    :root {
+      --bg:        #0c0b09;
+      --bg2:       #100f0c;
+      --surface:   rgba(255,248,238,.045);
+      --surface2:  rgba(255,248,238,.07);
+      --stroke:    rgba(196,160,110,.18);
+      --stroke2:   rgba(196,160,110,.10);
+      --accent:    #b8926a;
+      --accent-lt: #d4ae88;
+      --accent-dk: #8c6a48;
+      --gold:      #c9a96e;
+      --gold-lt:   #e0c99c;
+      --text:      #f0e8dc;
+      --muted:     rgba(240,232,220,.68);
+      --muted2:    rgba(240,232,220,.42);
+      --muted3:    rgba(240,232,220,.26);
+      --serif:     'Cormorant Garamond', Georgia, serif;
+      --sans:      'Inter', system-ui, -apple-system, sans-serif;
+      --r-sm:      10px;
+      --r-md:      16px;
+      --r-lg:      24px;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);
+
+    /* ── Reset ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Grain texture overlay ───────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .028;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    /* Warm ambient glow */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
       background:
-        radial-gradient(1200px 700px at 18% -10%, rgba(249,115,22,.14), transparent 60%),
-        radial-gradient(900px 600px at 88% 5%, rgba(245,158,11,.10), transparent 55%),
-        radial-gradient(1000px 700px at 50% 115%, rgba(249,115,22,.08), transparent 60%),
-        var(--bg);
+        radial-gradient(ellipse 1400px 800px at 20% -5%, rgba(184,146,106,.09) 0%, transparent 65%),
+        radial-gradient(ellipse 900px 600px at 85% 8%,  rgba(201,169,110,.06) 0%, transparent 60%),
+        radial-gradient(ellipse 1100px 700px at 50% 105%,rgba(184,146,106,.07) 0%, transparent 60%);
     }
-    a{color:inherit}
-    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
 
-    .nav{position:sticky;top:0;z-index:10;background:linear-gradient(to bottom, rgba(11,11,16,.92), rgba(11,11,16,.55) 60%, transparent);backdrop-filter: blur(10px);
-      display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
-    .brand{text-decoration:none;min-width:0}
-    .brand b{display:block;font-weight:950;letter-spacing:-.05em;font-size:1.05rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .brand span{display:block;margin-top:3px;color:var(--muted2);font-size:.8rem}
-
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:12px 16px;border-radius:14px;border:1px solid var(--stroke);text-decoration:none;font-weight:900;background:rgba(255,255,255,.04)}
-    .btn.primary{background:linear-gradient(135deg, rgba(249,115,22,.98), rgba(245,158,11,.92));border-color:rgba(249,115,22,.30);color:#140b04;box-shadow:0 18px 70px rgba(249,115,22,.16)}
-
-    .hero{padding:34px 0 18px}
-    .heroGrid{display:grid;grid-template-columns:1.12fr .88fr;gap:18px;align-items:stretch}
-    @media(max-width:900px){.heroGrid{grid-template-columns:1fr}}
-
-    .card{background:var(--card);border:1px solid var(--stroke);border-radius:18px;padding:18px;box-shadow:0 18px 60px rgba(0,0,0,.25)}
-    .heroImg{width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 40px rgba(0,0,0,.35)}
-
-    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:8px 12px;border-radius:999px;border:1px solid rgba(249,115,22,.25);background:rgba(249,115,22,.10);color:rgba(255,255,255,.88);font-weight:900;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
-    h1{margin:14px 0 10px;font-size:clamp(2.1rem,5vw,3.2rem);letter-spacing:-.06em;line-height:1.05}
-    .sub{margin:0;color:var(--muted);line-height:1.7;font-size:1.02rem}
-
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
-    @media(max-width:980px){.grid3{grid-template-columns:1fr 1fr}}
-    @media(max-width:700px){.grid3{grid-template-columns:1fr}}
-
-    .section{padding:46px 0}
-    .section h2{margin:0 0 10px;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.04em}
-    .small{margin:0;color:var(--muted2);line-height:1.7}
-
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
-    .reveal.in{opacity:1;transform:none}
-    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
-
-    .footer{padding:30px 0 40px;color:var(--muted2)}
-    .footRow{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.10);padding-top:16px}
-
-    .tag{font-size:.78rem;color:rgba(255,255,255,.82);background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.22);padding:6px 10px;border-radius:999px}
-
-    @media(max-width:520px){
-      .brand span{display:none}
-      .nav{flex-wrap:wrap}
-      .nav .btn{flex:1}
+    /* ── Layout ──────────────────────────────────────────────── */
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
     }
+    @media (min-width: 768px) { .wrap { padding: 0 40px; } }
+
+    /* ── Navigation ──────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--stroke2);
+      background: rgba(12,11,9,.82);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      transition: padding .3s ease;
+    }
+    .nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .brand { display: flex; flex-direction: column; gap: 2px; }
+    .brand__name {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.15rem;
+      letter-spacing: .04em;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .brand__tagline {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    @media (max-width: 600px) { .nav-links .btn-ghost { display: none; } }
+
+    /* ── Buttons ─────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      padding: 11px 22px;
+      border-radius: 999px;
+      font-family: var(--sans);
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all .22s ease;
+      white-space: nowrap;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--stroke);
+      color: var(--muted);
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent-lt);
+      background: rgba(184,146,106,.07);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dk));
+      border-color: var(--accent-dk);
+      color: #1a1008;
+      box-shadow: 0 8px 32px rgba(184,146,106,.22), 0 2px 8px rgba(184,146,106,.12);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--accent-lt), var(--accent));
+      box-shadow: 0 12px 40px rgba(184,146,106,.32), 0 2px 8px rgba(184,146,106,.18);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: transparent;
+      border-color: var(--accent);
+      color: var(--accent-lt);
+    }
+    .btn-outline:hover {
+      background: rgba(184,146,106,.1);
+      border-color: var(--accent-lt);
+      color: var(--gold-lt);
+    }
+    .btn-lg {
+      padding: 14px 32px;
+      font-size: .88rem;
+    }
+
+    /* ── Section chrome ──────────────────────────────────────── */
+    .section { padding: 96px 0; position: relative; }
+    .section + .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 80px);
+      max-width: 1040px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--stroke), transparent);
+    }
+
+    /* Ornament divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .divider__line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--stroke));
+    }
+    .divider__line--rev {
+      background: linear-gradient(to left, transparent, var(--stroke));
+    }
+    .divider__ornament {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .divider__ornament::before,
+    .divider__ornament::after {
+      content: '◆';
+      font-size: .45rem;
+      opacity: .6;
+    }
+
+    /* Section label */
+    .section-eyebrow {
+      font-size: .72rem;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: .01em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+    .section-body {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    /* ── Cards ───────────────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--stroke2);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      transition: border-color .22s ease, background .22s ease;
+    }
+    .card:hover {
+      border-color: var(--stroke);
+      background: var(--surface2);
+    }
+    .card-sm { padding: 24px; }
+
+    /* ── Grids ───────────────────────────────────────────────── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .grid-3 { grid-template-columns: 1fr; } }
+    @media (max-width: 860px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    /* ── Hero ────────────────────────────────────────────────── */
+    .hero { padding: 32px 0 80px; }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } }
+
+    .hero-media {
+      position: relative;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid var(--stroke);
+    }
+    .hero-media img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    @media (max-width: 900px) { .hero-media img { height: 380px; } }
+
+    /* gradient overlay on hero image */
+    .hero-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(12,11,9,.65) 0%,
+        transparent 40%
+      );
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(12,11,9,.72);
+      border: 1px solid var(--stroke);
+      backdrop-filter: blur(10px);
+      font-size: .75rem;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      font-weight: 600;
+    }
+    .hero-badge span { opacity: .5; }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 8px 0;
+    }
+
+    .hero-eyebrow {
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: .6;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: .01em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 1.02rem;
+      line-height: 1.78;
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 420px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      font-size: .72rem;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,169,110,.08);
+      border: 1px solid rgba(201,169,110,.20);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* ── About card (hero sidebar) ───────────────────────────── */
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--stroke2);
+      border-radius: var(--r-lg);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .about-card h3 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: .01em;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .about-card .cert {
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .about-card p {
+      font-size: .98rem;
+      line-height: 1.78;
+      color: var(--muted);
+    }
+    .about-img {
+      width: 100%;
+      border-radius: var(--r-md);
+      border: 1px solid var(--stroke2);
+      overflow: hidden;
+    }
+    .about-img img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ── Packages ────────────────────────────────────────────── */
+    .packages-section { padding: 96px 0; }
+    .package-card {
+      background: var(--surface);
+      border: 1px solid var(--stroke2);
+      border-radius: var(--r-lg);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .22s ease, background .22s ease, transform .22s ease;
+    }
+    .package-card:hover {
+      border-color: rgba(201,169,110,.35);
+      background: var(--surface2);
+      transform: translateY(-3px);
+    }
+    .package-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity .22s ease;
+    }
+    .package-card:hover::before { opacity: 1; }
+    .package-card.featured {
+      border-color: rgba(201,169,110,.30);
+      background: rgba(201,169,110,.06);
+    }
+    .package-card.featured::before { opacity: 1; }
+
+    .pkg-label {
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .pkg-name {
+      font-family: var(--serif);
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+    }
+    .pkg-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .pkg-price {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1;
+    }
+    .pkg-duration {
+      font-size: .82rem;
+      color: var(--muted2);
+      letter-spacing: .06em;
+    }
+    .pkg-desc {
+      font-size: .95rem;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+    .pkg-divider {
+      height: 1px;
+      background: var(--stroke2);
+    }
+
+    .hot-stones-note {
+      margin-top: 28px;
+      padding: 20px 28px;
+      border-radius: var(--r-md);
+      border: 1px solid var(--stroke2);
+      background: rgba(201,169,110,.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.68;
+    }
+    .hot-stones-note .icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .hot-stones-note strong { color: var(--gold-lt); }
+
+    .packages-actions {
+      margin-top: 40px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Testimonials ────────────────────────────────────────── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--stroke2);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      font-family: var(--serif);
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: .18;
+      pointer-events: none;
+    }
+    .testimonial-quote {
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--muted);
+      padding-top: 12px;
+      flex: 1;
+    }
+    .testimonial-by {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 4px;
+      border-top: 1px solid var(--stroke2);
+    }
+    .testimonial-by__dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .testimonial-by__name {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold-lt);
+    }
+    .stars {
+      display: flex;
+      gap: 2px;
+      color: var(--gold);
+      font-size: .7rem;
+      margin-left: auto;
+    }
+
+    /* ── Benefits ────────────────────────────────────────────── */
+    .benefit-card {
+      background: var(--surface);
+      border: 1px solid var(--stroke2);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color .22s ease, background .22s ease, transform .22s ease;
+    }
+    .benefit-card:hover {
+      border-color: var(--stroke);
+      background: var(--surface2);
+      transform: translateY(-2px);
+    }
+    .benefit-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    .benefit-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: .01em;
+    }
+    .benefit-desc {
+      font-size: .92rem;
+      color: var(--muted);
+      line-height: 1.68;
+    }
+
+    /* ── Gift cards ──────────────────────────────────────────── */
+    .gift-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    @media (max-width: 860px) { .gift-inner { grid-template-columns: 1fr; } }
+
+    .gift-img {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid var(--stroke);
+    }
+    .gift-img img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: center;
+    }
+    @media (max-width: 860px) { .gift-img { order: -1; } .gift-img img { height: 260px; } }
+
+    .gift-content { display: flex; flex-direction: column; gap: 20px; }
+    .gift-content .section-title { margin-bottom: 4px; }
+
+    /* ── Hours callout ───────────────────────────────────────── */
+    .hours-note {
+      padding: 20px 28px;
+      border-radius: var(--r-md);
+      border: 1px solid var(--stroke2);
+      background: rgba(201,169,110,.04);
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.68;
+    }
+    .hours-note strong { color: var(--gold-lt); }
+
+    /* ── Footer ──────────────────────────────────────────────── */
+    .footer {
+      padding: 60px 0 40px;
+      position: relative;
+    }
+    .footer::before {
+      content: '';
+      display: block;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--stroke), transparent);
+      margin-bottom: 48px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+    }
+    @media (max-width: 700px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    .footer-brand { display: flex; flex-direction: column; gap: 12px; }
+    .footer-brand__name {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: .02em;
+    }
+    .footer-brand__tagline {
+      font-size: .8rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .footer-brand__desc {
+      font-size: .88rem;
+      color: var(--muted2);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col ul li a {
+      font-size: .88rem;
+      color: var(--muted2);
+      transition: color .18s ease;
+    }
+    .footer-col ul li a:hover { color: var(--gold-lt); }
+
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--stroke2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .78rem;
+      color: var(--muted3);
+    }
+
+    /* ── Reveal animations ───────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .65s cubic-bezier(.22,.61,.36,1), transform .65s cubic-bezier(.22,.61,.36,1);
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── Stagger utility ─────────────────────────────────────── */
+    .stagger > * { transition-delay: calc(var(--i, 0) * 80ms); }
+    .stagger > *:nth-child(1) { --i: 0; }
+    .stagger > *:nth-child(2) { --i: 1; }
+    .stagger > *:nth-child(3) { --i: 2; }
+    .stagger > *:nth-child(4) { --i: 3; }
+    .stagger > *:nth-child(5) { --i: 4; }
+    .stagger > *:nth-child(6) { --i: 5; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="nav">
-      <a class="brand" href="#top"><b>Lomi Luxe Massage</b><span>The self-care you deserve</span></a>
-      <div style="display:flex;gap:10px;flex:1;justify-content:flex-end;min-width:240px">
-        <a class="btn" id="navPackages" href="#packages">Packages</a>
-        <a class="btn primary" href="https://www.facebook.com/profile.php?id=61560633639804" target="_blank" rel="noopener">Message to book</a>
+
+  <!-- ── Navigation ──────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Lomi Luxe Massage — home">
+        <span class="brand__name">Lomi Luxe Massage</span>
+        <span class="brand__tagline">The self-care you deserve</span>
+      </a>
+      <div class="nav-links">
+        <a class="btn btn-ghost" href="#packages">Packages</a>
+        <a class="btn btn-ghost" href="#testimonials">Reviews</a>
+        <a class="btn btn-primary" href="https://www.facebook.com/profile.php?id=61560633639804" target="_blank" rel="noopener noreferrer">Book Now</a>
       </div>
     </div>
+  </nav>
 
-    <section id="top" class="hero reveal">
-      <div class="heroGrid">
-        <div class="card" style="display:grid;gap:14px">
-          <img class="heroImg" src="assets/hero.jpg" alt="Hot stone massage" loading="eager" />
-          <span class="pill">Lomi Lomi • Hot Stones +$20 • Gift Cards</span>
-          <h1>Reset your nervous system.
-            <span style="color:rgba(249,115,22,.98)">Leave lighter.</span>
-          </h1>
-          <p class="sub">Experience rhythmic, flowing Lomi Lomi massage rooted in Hawaiian healing traditions. Custom pressure, calming ambiance, and real relief.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
-            <a class="btn primary" href="https://www.facebook.com/profile.php?id=61560633639804" target="_blank" rel="noopener">Book on Facebook</a>
-            <a class="btn" href="#packages">See packages</a>
+  <!-- ── Hero ────────────────────────────────────────────────── -->
+  <section id="top" class="hero" aria-labelledby="hero-headline">
+    <div class="wrap">
+      <div class="hero-inner reveal">
+
+        <!-- Left: image -->
+        <div class="hero-media">
+          <img
+            src="assets/hero.jpg"
+            alt="Serene hot stone massage session at Lomi Luxe"
+            loading="eager"
+            fetchpriority="high"
+            width="800" height="520"
+          />
+          <div class="hero-badge">
+            Lomi Lomi <span>·</span> Hawaiian Healing Traditions
           </div>
         </div>
 
-        <div class="card">
-          <h3 style="margin:0 0 10px;letter-spacing:-.02em">Hi, I’m Leta</h3>
-          <p class="small">Certified Holistic Lomi Lomi Massage Practitioner.</p>
-          <p class="sub" style="margin-top:10px">Lomi Lomi, also known as Loving Hands massage, combines rhythmic flowing strokes, nut oils, breathing techniques, and movement to soothe the body. The goal is harmony, circulation, and deep relaxation.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+        <!-- Right: copy -->
+        <div class="hero-content">
+          <p class="hero-eyebrow">Certified Holistic Practitioner</p>
+          <h1 class="hero-title" id="hero-headline">
+            Reset your<br>nervous system.
+            <em>Leave lighter.</em>
+          </h1>
+          <p class="hero-desc">
+            Experience rhythmic, flowing Lomi Lomi massage rooted in Hawaiian healing traditions — ocean-wave strokes, custom pressure, and a calming ambiance designed to carry stress away.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://www.facebook.com/profile.php?id=61560633639804" target="_blank" rel="noopener noreferrer">Book on Facebook</a>
+            <a class="btn btn-outline btn-lg" href="#packages">See packages</a>
+          </div>
+          <div class="hero-tags">
+            <span class="tag">Custom pressure</span>
+            <span class="tag">Ocean-wave strokes</span>
+            <span class="tag">Hot stones +$20</span>
+            <span class="tag">Gift cards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ────────────────────────────────────────────────── -->
+  <section id="about" class="section" aria-labelledby="about-headline">
+    <div class="wrap">
+      <div class="divider">
+        <div class="divider__line"></div>
+        <div class="divider__ornament">About Leta</div>
+        <div class="divider__line divider__line--rev"></div>
+      </div>
+
+      <div class="grid-2 reveal">
+        <div class="about-card">
+          <div>
+            <div class="cert">Certified Holistic Lomi Lomi Massage Practitioner</div>
+            <h2 class="section-title" id="about-headline" style="margin-top:10px">
+              Hi, I'm <em>Leta</em>
+            </h2>
+          </div>
+
+          <p style="font-size:.98rem;color:var(--muted);line-height:1.78">
+            Lomi Lomi, also known as <strong style="color:var(--gold-lt);font-weight:500">Loving Hands</strong> massage, is a deeply restorative practice rooted in Hawaiian healing traditions. It combines long, rhythmic flowing strokes — inspired by the gentle motion of ocean waves — with warm nut oils, intentional breathing techniques, and graceful movement.
+          </p>
+          <p style="font-size:.98rem;color:var(--muted);line-height:1.78">
+            The goal is harmony: to soothe the body, quiet the mind, support circulation, and invite deep, genuine relaxation. Each session is tailored to your needs, so you always leave feeling exactly as you should.
+          </p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px">
             <span class="tag">Custom pressure</span>
             <span class="tag">Ocean-wave strokes</span>
             <span class="tag">Serene ambiance</span>
+            <span class="tag">Warm nut oils</span>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div class="about-img">
+            <img src="assets/healing.jpg" alt="Lomi Lomi healing session" loading="lazy" width="700" height="450" />
+          </div>
+          <div class="card card-sm" style="border-color:rgba(201,169,110,.20);background:rgba(201,169,110,.05)">
+            <p style="font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--muted);line-height:1.7">
+              "The goal is harmony, circulation, and deep relaxation — leaving you lighter than when you arrived."
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="packages" class="section reveal">
-      <h2>Treatment packages</h2>
-      <p class="small">Choose your self-care. Hot stones can be added for an additional $20 (does not add time).</p>
+  <!-- ── Packages ─────────────────────────────────────────────── -->
+  <section id="packages" class="section" aria-labelledby="packages-headline">
+    <div class="wrap">
+      <div class="divider">
+        <div class="divider__line"></div>
+        <div class="divider__ornament">Treatment Packages</div>
+        <div class="divider__line divider__line--rev"></div>
+      </div>
 
-      <div class="grid3">
-        <div class="card">
-          <h3 style="margin:0 0 8px">Quick Calm</h3>
-          <div class="small" style="margin-bottom:10px">60 min <b style="color:#fff">($80)</b></div>
-          <p class="sub">Stop for a moment and reconnect with yourself with a customizable 60-minute Lomi Lomi massage.</p>
+      <div style="max-width:600px;margin-bottom:48px" class="reveal">
+        <p class="section-eyebrow">Choose your self-care</p>
+        <h2 class="section-title" id="packages-headline">
+          Every session is a <em>ritual</em>
+        </h2>
+        <p class="section-body">
+          Each Lomi Lomi session is fully tailored to you. Choose the duration that suits your schedule and your needs.
+        </p>
+      </div>
+
+      <div class="grid-3 stagger reveal">
+
+        <div class="package-card">
+          <div class="pkg-label">60 minutes</div>
+          <div class="pkg-name">Quick Calm</div>
+          <div class="pkg-meta">
+            <div class="pkg-price">$80</div>
+            <div class="pkg-duration">/ session</div>
+          </div>
+          <div class="pkg-divider"></div>
+          <p class="pkg-desc">
+            Stop for a moment and reconnect with yourself. A focused, customizable 60-minute Lomi Lomi massage to release tension and restore calm.
+          </p>
         </div>
-        <div class="card">
-          <h3 style="margin:0 0 8px">Bliss Break</h3>
-          <div class="small" style="margin-bottom:10px">75 min <b style="color:#fff">($95)</b></div>
-          <p class="sub">An extended session to embrace deeper relaxation and restore balance.</p>
+
+        <div class="package-card featured">
+          <div class="pkg-label">75 minutes · Most popular</div>
+          <div class="pkg-name">Bliss Break</div>
+          <div class="pkg-meta">
+            <div class="pkg-price">$95</div>
+            <div class="pkg-duration">/ session</div>
+          </div>
+          <div class="pkg-divider"></div>
+          <p class="pkg-desc">
+            An extended session to embrace deeper relaxation. The extra time allows your body to fully surrender and restore its natural balance.
+          </p>
         </div>
-        <div class="card">
-          <h3 style="margin:0 0 8px">Lasting Luxe</h3>
-          <div class="small" style="margin-bottom:10px">90 min <b style="color:#fff">($119)</b></div>
-          <p class="sub">Clear some time and fully unwind with a 90-minute Lomi Lomi experience.</p>
+
+        <div class="package-card">
+          <div class="pkg-label">90 minutes</div>
+          <div class="pkg-name">Lasting Luxe</div>
+          <div class="pkg-meta">
+            <div class="pkg-price">$119</div>
+            <div class="pkg-duration">/ session</div>
+          </div>
+          <div class="pkg-divider"></div>
+          <p class="pkg-desc">
+            Clear some time and fully unwind. A full 90-minute immersive Lomi Lomi experience — the complete reset your body has been asking for.
+          </p>
         </div>
+
       </div>
 
-      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn primary" href="https://www.facebook.com/profile.php?id=61560633639804" target="_blank" rel="noopener">Message to book</a>
-        <a class="btn" href="#benefits">View benefits</a>
-      </div>
-    </section>
-
-    <section id="testimonials" class="section reveal">
-      <div class="section-head">
-        <h2>Testimonials</h2>
-        <p>What guests are saying after a session with Leta.</p>
-      </div>
-      <div class="cards cards-3">
-        <div class="card"><p class="quote">“I had a fantastic massage experience! It was the perfect escape from stress. Highly recommend for anyone looking to unwind and rejuvenate!”</p><div class="by">Quinn</div></div>
-        <div class="card"><p class="quote">“When it’s time to chill this is the place to go. It’s a different experience from regular therapeutic massage with a gentler touch. Ambiance was relaxing.”</p><div class="by">Sylvie</div></div>
-        <div class="card"><p class="quote">“You have not had a great massage until you have had a Lomi Lomi style massage. Leta has created a serene, calming experience. Book with Leta today!”</p><div class="by">Ryan</div></div>
-        <div class="card"><p class="quote">“The atmosphere was so soothing with calming music and the massage was just what I needed to relax and let my stress melt away.”</p><div class="by">Jenzie</div></div>
-        <div class="card"><p class="quote">“My first Lomi Lomi massage was unlike any other. A deeply connected experience. I cannot recommend working with Leta enough!”</p><div class="by">Sandy</div></div>
-        <div class="card"><p class="quote">“Quiet, warm, soothing and better than massages.”</p><div class="by">Guest</div></div>
-      </div>
-</section>
-
-    <section id="benefits" class="section reveal">
-      <h2>Health benefits</h2>
-      <p class="small">A calm body supports a calm mind.</p>
-      <div class="grid3">
-        <div class="card"><b>Harmony and serenity</b><div class="small" style="margin-top:6px">Deep relaxation that feels like a reset.</div></div>
-        <div class="card"><b>Releases tension</b><div class="small" style="margin-top:6px">Helps relax the body and quiet the mind.</div></div>
-        <div class="card"><b>Improves bloodflow</b><div class="small" style="margin-top:6px">Supports circulation and mobility.</div></div>
-        <div class="card"><b>Lymphatic support</b><div class="small" style="margin-top:6px">Stimulates lymphatic drainage system.</div></div>
-        <div class="card"><b>Loosens muscles</b><div class="small" style="margin-top:6px">Helps reduce tightness and stiffness.</div></div>
-        <div class="card"><b>Focus & energy</b><div class="small" style="margin-top:6px">Improves productivity and attention.</div></div>
-      </div>
-    </section>
-
-    <section id="gift" class="section reveal">
-      <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center">
+      <div class="hot-stones-note reveal" style="margin-top:24px">
+        <div class="icon">🪨</div>
         <div>
-          <h2 style="margin:0 0 10px">Gift cards</h2>
-          <p class="sub">Give the gift of serenity. Perfect for birthdays, holidays, and self-care resets.</p>
-          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn primary" href="https://www.facebook.com/profile.php?id=61560633639804" target="_blank" rel="noopener">Ask about gift cards</a>
-            <a class="btn" href="#packages">View packages</a>
+          <strong>Hot stones</strong> can be added to any package for an additional <strong>+$20</strong>. Hot stones do not add session time — they enhance the warmth and depth of your existing treatment, helping muscles release more fully.
+        </div>
+      </div>
+
+      <div class="packages-actions reveal">
+        <a class="btn btn-primary btn-lg" href="https://www.facebook.com/profile.php?id=61560633639804" target="_blank" rel="noopener noreferrer">Message to Book</a>
+        <a class="btn btn-outline btn-lg" href="#benefits">View Benefits</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonials ──────────────────────────────────────────── -->
+  <section id="testimonials" class="section" aria-labelledby="testimonials-headline">
+    <div class="wrap">
+      <div class="divider">
+        <div class="divider__line"></div>
+        <div class="divider__ornament">Guest Experiences</div>
+        <div class="divider__line divider__line--rev"></div>
+      </div>
+
+      <div style="max-width:560px;margin-bottom:48px" class="reveal">
+        <p class="section-eyebrow">Testimonials</p>
+        <h2 class="section-title" id="testimonials-headline">
+          What guests say after a session <em>with Leta</em>
+        </h2>
+      </div>
+
+      <div class="testimonials-grid stagger reveal">
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "I had a fantastic massage experience! It was the perfect escape from stress. Highly recommend for anyone looking to unwind and rejuvenate!"
+          </p>
+          <div class="testimonial-by">
+            <div class="testimonial-by__dot"></div>
+            <div class="testimonial-by__name">Quinn</div>
+            <div class="stars">★★★★★</div>
           </div>
         </div>
-        <div style="display:grid;gap:10px">
-          <img class="heroImg" src="assets/massage.jpg" alt="Massage" loading="lazy" />
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "When it's time to chill, this is the place to go. It's a different experience from regular therapeutic massage — gentler touch, deeply relaxing. The ambiance was perfect."
+          </p>
+          <div class="testimonial-by">
+            <div class="testimonial-by__dot"></div>
+            <div class="testimonial-by__name">Sylvie</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "You have not had a great massage until you've had a Lomi Lomi style massage. Leta has created a serene, calming experience. Book with Leta today!"
+          </p>
+          <div class="testimonial-by">
+            <div class="testimonial-by__dot"></div>
+            <div class="testimonial-by__name">Ryan</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "The atmosphere was so soothing — calming music, warm and quiet space. The massage was just what I needed to relax and let my stress melt away."
+          </p>
+          <div class="testimonial-by">
+            <div class="testimonial-by__dot"></div>
+            <div class="testimonial-by__name">Jenzie</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "My first Lomi Lomi massage was unlike any other I've experienced — deeply connected and restorative. I cannot recommend working with Leta enough!"
+          </p>
+          <div class="testimonial-by">
+            <div class="testimonial-by__dot"></div>
+            <div class="testimonial-by__name">Sandy</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Quiet, warm, soothing — and better than any massage I've had before."
+          </p>
+          <div class="testimonial-by">
+            <div class="testimonial-by__dot"></div>
+            <div class="testimonial-by__name">Guest</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Benefits ─────────────────────────────────────────────── -->
+  <section id="benefits" class="section" aria-labelledby="benefits-headline">
+    <div class="wrap">
+      <div class="divider">
+        <div class="divider__line"></div>
+        <div class="divider__ornament">Health Benefits</div>
+        <div class="divider__line divider__line--rev"></div>
+      </div>
+
+      <div style="max-width:560px;margin-bottom:48px" class="reveal">
+        <p class="section-eyebrow">Why Lomi Lomi</p>
+        <h2 class="section-title" id="benefits-headline">
+          A calm body supports a <em>calm mind</em>
+        </h2>
+        <p class="section-body">
+          Lomi Lomi is more than relaxation — it's a holistic approach to wellbeing that works on the body and mind simultaneously.
+        </p>
+      </div>
+
+      <div class="grid-3 stagger reveal">
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🌿</div>
+          <div class="benefit-title">Harmony &amp; Serenity</div>
+          <p class="benefit-desc">A deep sense of relaxation that feels like a complete reset — mind, body, and spirit aligned.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🤲</div>
+          <div class="benefit-title">Releases Tension</div>
+          <p class="benefit-desc">Rhythmic flowing strokes help relax the body, quiet mental noise, and ease held stress patterns.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">💓</div>
+          <div class="benefit-title">Improves Circulation</div>
+          <p class="benefit-desc">Long, sweeping movements stimulate blood flow, supporting circulation and overall mobility.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🌊</div>
+          <div class="benefit-title">Lymphatic Support</div>
+          <p class="benefit-desc">The wave-like strokes stimulate the lymphatic drainage system, supporting your body's natural detox.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🧘</div>
+          <div class="benefit-title">Loosens Muscles</div>
+          <p class="benefit-desc">Helps reduce tightness, stiffness, and physical tension accumulated from daily life and stress.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">✨</div>
+          <div class="benefit-title">Focus &amp; Energy</div>
+          <p class="benefit-desc">Many guests report improved mental clarity, focus, and renewed energy following a session.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Gift Cards ────────────────────────────────────────────── -->
+  <section id="gift" class="section" aria-labelledby="gift-headline">
+    <div class="wrap">
+      <div class="divider">
+        <div class="divider__line"></div>
+        <div class="divider__ornament">Gift Cards</div>
+        <div class="divider__line divider__line--rev"></div>
+      </div>
+
+      <div class="gift-inner reveal">
+        <div class="gift-content">
+          <div>
+            <p class="section-eyebrow">Give the gift of serenity</p>
+            <h2 class="section-title" id="gift-headline">
+              The perfect <em>thoughtful</em> gift
+            </h2>
+          </div>
+          <p class="section-body">
+            Gift cards are available for any package. Perfect for birthdays, holidays, anniversaries, or simply reminding someone you love that they deserve to rest.
+          </p>
+          <div class="hours-note">
+            <strong>Hours:</strong> Openings may vary. Reach out via Facebook to inquire about availability and to reserve your preferred time.
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn btn-primary btn-lg" href="https://www.facebook.com/profile.php?id=61560633639804" target="_blank" rel="noopener noreferrer">Ask About Gift Cards</a>
+            <a class="btn btn-outline btn-lg" href="#packages">View Packages</a>
+          </div>
+        </div>
+
+        <div class="gift-img">
+          <img src="assets/massage.jpg" alt="Relaxing massage session" loading="lazy" width="700" height="450" />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="footer">
-      <div class="footRow">
-        <div>
-          <div style="font-weight:950;color:rgba(255,255,255,.92)">Lomi Luxe Massage</div>
-          <div style="margin-top:6px">Openings may vary. Inquire for availability.</div>
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-brand__name">Lomi Luxe Massage</div>
+          <div class="footer-brand__tagline">The self-care you deserve</div>
+          <p class="footer-brand__desc">
+            Certified holistic Lomi Lomi massage by Leta. Experience Hawaiian healing traditions in a serene, welcoming space.
+          </p>
         </div>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <a href="#packages" style="text-decoration:none;color:var(--muted2)">Packages</a>
-          <a href="#benefits" style="text-decoration:none;color:var(--muted2)">Benefits</a>
-          <a href="#gift" style="text-decoration:none;color:var(--muted2)">Gift cards</a>
-          <a href="https://www.facebook.com/profile.php?id=61560633639804" target="_blank" rel="noopener" style="text-decoration:none;color:var(--muted2)">Facebook</a>
+
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#about">About &amp; Lomi Lomi</a></li>
+            <li><a href="#packages">Treatment Packages</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#benefits">Health Benefits</a></li>
+            <li><a href="#gift">Gift Cards</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Book &amp; Connect</h4>
+          <ul>
+            <li><a href="https://www.facebook.com/profile.php?id=61560633639804" target="_blank" rel="noopener noreferrer">Message on Facebook</a></li>
+            <li><a href="#packages">Quick Calm — 60 min $80</a></li>
+            <li><a href="#packages">Bliss Break — 75 min $95</a></li>
+            <li><a href="#packages">Lasting Luxe — 90 min $119</a></li>
+          </ul>
         </div>
       </div>
-      <div style="margin-top:14px;font-size:.82rem">© <span id="y"></span> Lomi Luxe Massage</div>
-    </section>
 
-  </div>
+      <div class="footer-bottom">
+        <span>© <span id="yr"></span> Lomi Luxe Massage. All rights reserved.</span>
+        <span>Openings may vary — inquire for availability.</span>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
 
-    function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
-    function smoothScrollTo(targetY, duration){
-      const startY = window.scrollY;
-      const diff = targetY - startY;
-      const start = performance.now();
-      function step(now){
-        const t = Math.min(1, (now - start) / duration);
-        const eased = easeOutCubic(t);
-        window.scrollTo(0, startY + diff * eased);
-        if(t < 1) requestAnimationFrame(step);
+    // Smooth scroll
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+    function smoothScrollTo(y, dur) {
+      const start = window.scrollY, diff = y - start, t0 = performance.now();
+      function step(now) {
+        const t = Math.min(1, (now - t0) / dur);
+        window.scrollTo(0, start + diff * easeOutCubic(t));
+        if (t < 1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
     }
-    document.getElementById('navPackages')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      const el = document.getElementById('packages');
-      if(!el) return;
-      const y = el.getBoundingClientRect().top + window.scrollY - 90;
-      smoothScrollTo(y, 900);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (!el) return;
+        e.preventDefault();
+        const y = el.getBoundingClientRect().top + window.scrollY - 80;
+        smoothScrollTo(y, 900);
+      });
     });
 
-    const io = new IntersectionObserver((entries) => {
-      for(const en of entries){
-        if(en.isIntersecting){
-          en.target.classList.add('in');
-          io.unobserve(en.target);
-        }
-      }
-    }, { threshold: 0.14 });
+    // Intersection observer reveals
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.10 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>
